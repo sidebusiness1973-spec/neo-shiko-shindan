@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neo思考診断｜あなたの思考傾向を見える化</title>
+  <meta name="description" content="Neo思考診断は、20の質問からあなたの思考傾向や価値観を整理・確認できる診断アプリです。">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.22), transparent 35%),
+        linear-gradient(135deg, #0f172a 0%, #111827 55%, #1e1b4b 100%);
+      color: #f8fafc;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: rgba(139, 92, 246, 0.16);
+      border: 1px solid rgba(167, 139, 250, 0.35);
+      color: #ddd6fe;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, #ffffff, #c4b5fd, #7dd3fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      color: #cbd5e1;
+    }
+
+    .cta-wrap {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #7c3aed, #2563eb);
+      color: white;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.35);
+    }
+
+    .btn-secondary {
+      color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.05);
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 28px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    }
+
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.98rem;
+    }
+
+    .about {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .notice {
+      margin-top: 36px;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #cbd5e1;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 40px 0 50px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #c4b5fd;
+      text-decoration: none;
+    }
+
+    @media (max-width: 780px) {
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">Neo思考診断</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">あなたの「考え方のクセ」を見える化</div>
+
+        <h1>あなたの思考は、<br>どんなタイプ？</h1>
+
+        <p class="lead">
+          Neo思考診断は、20の質問を通して、
+          あなたの思考傾向や価値観を整理・確認できる診断アプリです。
+          自分では気づきにくい考え方の特徴を、シンプルに振り返れます。
+        </p>
+
+        <div class="cta-wrap">
+          <a class="btn btn-primary" href="#features">特徴を見る</a>
+          <a class="btn btn-secondary"
+             href="https://sidebusiness1973-spec.github.io/neo-shiko-shindan-support/">
+            サポート
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2 class="section-title">Neo思考診断の特徴</h2>
+
+        <div class="grid">
+          <div class="card">
+            <div class="icon">🧠</div>
+            <h3>20の質問で診断</h3>
+            <p>
+              難しい操作は不要。質問に答えていくだけで、
+              あなたの思考傾向を整理できます。
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">📊</div>
+            <h3>自分の傾向を可視化</h3>
+            <p>
+              日頃なんとなく感じている自分の価値観や考え方を、
+              診断結果として振り返れます。
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">✨</div>
+            <h3>より深い診断へ</h3>
+            <p>
+              基本機能は無料で利用でき、
+              より詳しい診断コンテンツも用意しています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">自分を知るきっかけに</h2>
+
+        <div class="about">
+          <p>
+            「なぜ自分はこう考えるんだろう？」
+            「他の人とは何が違うんだろう？」
+            そんな疑問を、Neo思考診断を通して整理してみませんか。
+          </p>
+
+          <div class="notice">
+            本サービスの診断結果は、自己理解や振り返りを目的としたものです。
+            医学的・心理学的な診断を行うものではありません。
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Neo思考診断</p>
+      <p>
+        <a href="https://sidebusiness1973-spec.github.io/neo-shiko-shindan-support/">
+          サポート・プライバシーポリシー
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
