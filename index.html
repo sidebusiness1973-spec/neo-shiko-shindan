@@ -21,23 +21,24 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Helvetica Neue", "Hiragino Kaku Gothic ProN",
+        "Yu Gothic", sans-serif;
+
+      background:
+        radial-gradient(circle at 15% 0%,
+          rgba(124,58,237,.22), transparent 30%),
+        radial-gradient(circle at 90% 10%,
+          rgba(37,99,235,.18), transparent 30%),
+        #0b1020;
+
       color: #f8fafc;
       line-height: 1.8;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(124, 58, 237, .22), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(37, 99, 235, .18), transparent 30%),
-        #0b1020;
     }
 
     img {
       display: block;
       max-width: 100%;
-    }
-
-    a {
-      color: inherit;
     }
 
     .container {
@@ -49,17 +50,19 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(11, 16, 32, .82);
+
+      background: rgba(11,16,32,.88);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     nav {
       min-height: 68px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .brand {
@@ -69,38 +72,51 @@
 
     .nav-links {
       display: flex;
-      gap: 20px;
-      align-items: center;
+      gap: 22px;
     }
 
     .nav-links a {
+      color: #e2e8f0;
       text-decoration: none;
-      color: #dbeafe;
+      font-weight: 700;
       font-size: .92rem;
     }
 
+    /* HERO */
+
     .hero {
-      padding: 80px 0 55px;
+      padding: 76px 0 60px;
       text-align: center;
     }
 
     .badge {
       display: inline-block;
-      margin-bottom: 24px;
+
+      margin-bottom: 22px;
       padding: 8px 16px;
+
       border-radius: 999px;
-      font-weight: 800;
-      font-size: .92rem;
+
       color: #ddd6fe;
-      background: rgba(124, 58, 237, .18);
-      border: 1px solid rgba(167, 139, 250, .35);
+      font-size: .92rem;
+      font-weight: 800;
+
+      background: rgba(124,58,237,.18);
+      border: 1px solid rgba(167,139,250,.35);
     }
 
     h1 {
-      font-size: clamp(2.7rem, 7vw, 5.4rem);
-      line-height: 1.05;
+      font-size: clamp(2.7rem, 7vw, 5.2rem);
+      line-height: 1.06;
       letter-spacing: -.04em;
-      background: linear-gradient(90deg, #ffffff, #c4b5fd, #93c5fd);
+
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd,
+        #93c5fd
+      );
+
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -108,24 +124,35 @@
     .lead {
       max-width: 800px;
       margin: 26px auto 0;
-      font-size: clamp(1.05rem, 2vw, 1.28rem);
+
       color: #cbd5e1;
+
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
     }
 
     .buttons {
-      margin-top: 32px;
+      margin-top: 30px;
+
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 14px;
       flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      padding: 14px 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 56px;
+      padding: 12px 24px;
+
       border-radius: 14px;
+
       text-decoration: none;
       font-weight: 900;
+
       transition: .2s;
     }
 
@@ -134,58 +161,135 @@
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, #7c3aed, #2563eb);
-      color: #fff;
-      box-shadow: 0 12px 35px rgba(79, 70, 229, .35);
+      color: white;
+
+      background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #2563eb
+      );
+
+      box-shadow:
+        0 12px 35px rgba(79,70,229,.35);
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.05);
       color: #e2e8f0;
+
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .app-store-btn {
+      min-width: 215px;
+
+      display: inline-flex;
+      gap: 11px;
+
+      color: #111827;
+      background: #ffffff;
+
+      border: 1px solid rgba(255,255,255,.8);
+
+      box-shadow:
+        0 12px 35px rgba(0,0,0,.24);
+    }
+
+    .apple {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .store-text {
+      text-align: left;
+      line-height: 1.15;
+    }
+
+    .store-small {
+      display: block;
+      font-size: .72rem;
+      font-weight: 600;
+    }
+
+    .store-large {
+      display: block;
+      font-size: 1.03rem;
+      font-weight: 900;
     }
 
     .hero-image {
+      width: min(900px, 100%);
+
       margin: 50px auto 0;
-      max-width: 1050px;
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 30px 80px rgba(0,0,0,.40);
+      padding: 12px;
+
+      border-radius: 26px;
+
+      background: rgba(255,255,255,.04);
+
+      border:
+        1px solid rgba(255,255,255,.10);
+
+      box-shadow:
+        0 28px 70px rgba(0,0,0,.34);
     }
 
+    .hero-image img {
+      width: 100%;
+      height: auto;
+
+      border-radius: 18px;
+    }
+
+    /* GENERAL */
+
     section {
-      padding: 72px 0;
+      padding: 70px 0;
     }
 
     .section-title {
       text-align: center;
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
+
+      font-size:
+        clamp(1.9rem, 4vw, 2.6rem);
+
       margin-bottom: 12px;
     }
 
     .section-sub {
       max-width: 760px;
+
       margin: 0 auto 38px;
+
       text-align: center;
       color: #cbd5e1;
     }
 
-    .grid {
+    /* FEATURES */
+
+    .features {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 20px;
     }
 
     .card {
       padding: 28px;
+
       border-radius: 22px;
-      background: linear-gradient(
-        180deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.035)
-      );
-      border: 1px solid rgba(255,255,255,.10);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.07),
+          rgba(255,255,255,.035)
+        );
+
+      border:
+        1px solid rgba(255,255,255,.10);
     }
 
     .card-icon {
@@ -194,7 +298,7 @@
     }
 
     .card h3 {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       margin-bottom: 8px;
     }
 
@@ -202,115 +306,200 @@
       color: #cbd5e1;
     }
 
+    /* 5 AXES */
+
     .axes {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
       gap: 12px;
     }
 
     .axis {
       padding: 22px 10px;
-      border-radius: 18px;
+
       text-align: center;
       font-weight: 900;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,.06);
+
+      border:
+        1px solid rgba(255,255,255,.10);
     }
+
+    /* IMAGES */
 
     .gallery {
       display: grid;
-      grid-template-columns: 1.3fr .7fr;
+
+      grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
       gap: 22px;
-      align-items: start;
     }
 
-    .gallery img {
-      width: 100%;
+    .image-card {
+      height: 470px;
+
+      padding: 14px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
       border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+
+      background:
+        rgba(255,255,255,.035);
+
+      border:
+        1px solid rgba(255,255,255,.10);
+
+      box-shadow:
+        0 18px 50px rgba(0,0,0,.24);
     }
 
-    .premium {
+    .image-card img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      border-radius: 15px;
+    }
+
+    /* PREMIUM */
+
+    .premium-section {
       display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 36px;
+
+      grid-template-columns:
+        420px 1fr;
+
+      gap: 48px;
+
       align-items: center;
     }
 
-    .premium img {
-      max-height: 720px;
+    .premium-photo {
+      width: 100%;
+      max-width: 420px;
+
       margin: auto;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.10);
+      padding: 12px;
+
+      border-radius: 26px;
+
+      background:
+        rgba(255,255,255,.035);
+
+      border:
+        1px solid rgba(255,255,255,.10);
     }
 
-    .premium h3 {
-      font-size: 2.1rem;
+    .premium-photo img {
+      width: 100%;
+
+      max-height: 610px;
+
+      object-fit: contain;
+
+      border-radius: 18px;
+    }
+
+    .premium-copy h3 {
+      font-size:
+        clamp(1.8rem, 3vw, 2.3rem);
+
       margin-bottom: 12px;
     }
 
     .checks {
       display: grid;
       gap: 10px;
-      margin-top: 20px;
+
+      margin-top: 22px;
     }
 
     .checks div {
       padding: 12px 15px;
+
       border-radius: 13px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
+
+      background:
+        rgba(255,255,255,.05);
+
+      border:
+        1px solid rgba(255,255,255,.08);
     }
 
     .price {
       margin-top: 24px;
+
       font-size: 2rem;
       font-weight: 900;
     }
 
-    .release-image {
-      max-width: 1000px;
-      margin: 0 auto;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.10);
-    }
+    /* CTA */
 
     .cta {
-      padding: 42px 28px;
-      border-radius: 28px;
+      padding: 44px 28px;
+
       text-align: center;
-      background: linear-gradient(
-        135deg,
-        rgba(124,58,237,.28),
-        rgba(37,99,235,.18)
-      );
-      border: 1px solid rgba(255,255,255,.10);
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(124,58,237,.28),
+          rgba(37,99,235,.18)
+        );
+
+      border:
+        1px solid rgba(255,255,255,.10);
     }
 
     .cta h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size:
+        clamp(1.8rem, 4vw, 2.5rem);
+
       margin-bottom: 12px;
     }
 
     .notice {
       max-width: 900px;
+
       margin: 30px auto 0;
       padding: 18px 20px;
-      border-radius: 16px;
+
       color: #cbd5e1;
-      font-size: .92rem;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
+      font-size: .9rem;
+
+      border-radius: 16px;
+
+      background:
+        rgba(255,255,255,.04);
+
+      border:
+        1px solid rgba(255,255,255,.08);
     }
 
     footer {
-      padding: 40px 0 55px;
+      padding: 40px 0 52px;
+
       text-align: center;
       color: #94a3b8;
-      font-size: .9rem;
-      border-top: 1px solid rgba(255,255,255,.08);
+
+      border-top:
+        1px solid rgba(255,255,255,.08);
     }
 
     footer a {
@@ -319,35 +508,48 @@
     }
 
     @media (max-width: 850px) {
+
       .nav-links {
         display: none;
       }
 
       .hero {
-        padding-top: 58px;
-      }
-
-      .grid,
-      .axes,
-      .gallery,
-      .premium {
-        grid-template-columns: 1fr;
+        padding-top: 55px;
       }
 
       section {
-        padding: 54px 0;
+        padding: 52px 0;
       }
 
-      .hero-image,
-      .gallery img,
-      .release-image {
+      .features,
+      .axes,
+      .gallery,
+      .premium-section {
+        grid-template-columns: 1fr;
+      }
+
+      .image-card {
+        height: auto;
+      }
+
+      .image-card img {
+        height: auto;
+      }
+
+      .premium-section {
+        gap: 28px;
+      }
+
+      .premium-photo {
+        max-width: 370px;
+      }
+
+      .hero-image {
+        padding: 8px;
         border-radius: 18px;
       }
-
-      .premium img {
-        max-height: 620px;
-      }
     }
+
   </style>
 </head>
 
@@ -355,27 +557,39 @@
 
 <header>
   <div class="container">
+
     <nav>
-      <div class="brand">Neo思考診断</div>
+
+      <div class="brand">
+        Neo思考診断
+      </div>
 
       <div class="nav-links">
         <a href="#features">特徴</a>
         <a href="#axes">5つの軸</a>
         <a href="#premium">有料版</a>
+        <a href="#download">ダウンロード</a>
         <a href="https://sidebusiness1973-spec.github.io/neo-shiko-shindan-support/">
           サポート
         </a>
       </div>
+
     </nav>
+
   </div>
 </header>
 
+
 <main>
 
+
 <section class="hero">
+
   <div class="container">
 
-    <div class="badge">20の質問 × 5つの軸</div>
+    <div class="badge">
+      20の質問 × 5つの軸
+    </div>
 
     <h1>
       あなたの考え方を、<br>
@@ -384,150 +598,274 @@
 
     <p class="lead">
       Neo思考診断は、20の質問を通して、
-      政治・経済・社会・価値観・ライフスタイルの5つの視点から、
-      あなた自身の思考傾向を整理・確認できる診断アプリです。
+      政治・経済・社会・価値観・ライフスタイルの
+      5つの視点から、
+      あなた自身の思考傾向を整理・確認できる
+      iPhoneアプリです。
     </p>
 
     <div class="buttons">
-      <a class="btn btn-primary" href="#features">
+
+      <a class="btn app-store-btn"
+         href="https://apps.apple.com/jp/search?term=Neo%E6%80%9D%E8%80%83%E8%A8%BA%E6%96%AD"
+         target="_blank"
+         rel="noopener">
+
+        <span class="apple"></span>
+
+        <span class="store-text">
+          <span class="store-small">
+            App Storeで
+          </span>
+
+          <span class="store-large">
+            Neo思考診断を検索
+          </span>
+        </span>
+
+      </a>
+
+      <a class="btn btn-primary"
+         href="#features">
         アプリの特徴を見る
       </a>
 
-      <a class="btn btn-secondary"
-         href="https://sidebusiness1973-spec.github.io/neo-shiko-shindan-support/">
-        サポート
-      </a>
     </div>
 
+
     <div class="hero-image">
+
       <img
         src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_19-2.png"
-        alt="Neo思考診断 アプリ紹介">
+        alt="Neo思考診断">
+
     </div>
 
   </div>
+
 </section>
+
 
 
 <section id="features">
+
   <div class="container">
 
-    <h2 class="section-title">Neo思考診断の特徴</h2>
+    <h2 class="section-title">
+      Neo思考診断の特徴
+    </h2>
 
     <p class="section-sub">
       難しい知識は必要ありません。
-      質問に答えながら、自分がどのような考え方を重視しているのかを
-      振り返ることができます。
+      質問に答えながら、
+      自分がどのような考え方を
+      重視しているのかを振り返れます。
     </p>
 
-    <div class="grid">
+
+    <div class="features">
 
       <div class="card">
-        <div class="card-icon">💬</div>
-        <h3>20の質問でかんたん診断</h3>
+
+        <div class="card-icon">
+          💬
+        </div>
+
+        <h3>
+          20の質問でかんたん診断
+        </h3>
+
         <p>
           質問に順番に答えるだけ。
-          シンプルな操作で診断を進められます。
+          シンプルな操作で診断できます。
         </p>
+
       </div>
 
+
       <div class="card">
-        <div class="card-icon">📊</div>
-        <h3>5つの軸で整理</h3>
+
+        <div class="card-icon">
+          📊
+        </div>
+
+        <h3>
+          5つの軸で整理
+        </h3>
+
         <p>
           一つのラベルだけではなく、
-          複数の視点から思考傾向を確認します。
+          複数の視点から
+          思考傾向を確認します。
         </p>
+
       </div>
 
+
       <div class="card">
-        <div class="card-icon">🧭</div>
-        <h3>自分を知るきっかけに</h3>
+
+        <div class="card-icon">
+          🧭
+        </div>
+
+        <h3>
+          自分を知るきっかけに
+        </h3>
+
         <p>
-          自分が何を重視しているのかを振り返り、
-          自己理解に役立てることができます。
+          自分が何を重視しているのかを
+          振り返り、
+          自己理解に役立てられます。
         </p>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
+
 
 
 <section id="axes">
+
   <div class="container">
 
-    <h2 class="section-title">5つの診断軸</h2>
+    <h2 class="section-title">
+      5つの診断軸
+    </h2>
 
     <p class="section-sub">
-      Neo思考診断では、幅広いテーマを5つの観点から整理します。
+      幅広いテーマを
+      5つの観点から整理します。
     </p>
 
+
     <div class="axes">
+
       <div class="axis">政治</div>
+
       <div class="axis">経済</div>
+
       <div class="axis">社会</div>
+
       <div class="axis">価値観</div>
+
       <div class="axis">ライフスタイル</div>
+
     </div>
 
   </div>
+
 </section>
+
 
 
 <section>
+
   <div class="container">
 
-    <h2 class="section-title">実際のアプリをイメージ</h2>
+    <h2 class="section-title">
+      アプリをもっと詳しく
+    </h2>
 
     <p class="section-sub">
-      診断の流れや結果、有料版の内容を
-      実際の画面イメージと一緒に確認できます。
+      実際の診断画面や
+      Neo思考診断の世界観を
+      ご覧いただけます。
     </p>
+
 
     <div class="gallery">
 
-      <img
-        src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_21-3.png"
-        alt="Neo思考診断 診断画面と結果">
+      <div class="image-card">
 
-      <img
-        src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_22-4.png"
-        alt="Neo思考診断 紹介">
+        <img
+          src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_21-3.png"
+          alt="Neo思考診断 診断画面">
+
+      </div>
+
+
+      <div class="image-card">
+
+        <img
+          src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_22-4.png"
+          alt="Neo思考診断 紹介">
+
+      </div>
 
     </div>
 
   </div>
+
 </section>
 
 
+
 <section id="premium">
+
   <div class="container">
 
-    <div class="premium">
+    <div class="premium-section">
 
-      <img
-        src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_18-1.png"
-        alt="Neo思考診断 有料版">
 
-      <div>
+      <div class="premium-photo">
 
-        <div class="badge">Premium</div>
+        <img
+          src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_18-1.png"
+          alt="Neo思考診断 有料版">
 
-        <h3>もっと詳しく振り返りたい方へ</h3>
+      </div>
 
-        <p class="lead" style="margin:0;">
-          有料版では、診断結果をより詳しく確認するための機能を
+
+      <div class="premium-copy">
+
+        <div class="badge">
+          Premium
+        </div>
+
+        <h3>
+          もっと詳しく
+          振り返りたい方へ
+        </h3>
+
+        <p class="lead"
+           style="margin:0;">
+
+          有料版では、
+          診断結果をさらに詳しく
+          確認するための機能を
           利用できます。
+
         </p>
 
+
         <div class="checks">
-          <div>✓ 詳細な分析結果</div>
-          <div>✓ タイプ別アドバイス</div>
-          <div>✓ 診断履歴の保存</div>
-          <div>✓ 関連ニュースの解説</div>
-          <div>✓ 広告の非表示</div>
+
+          <div>
+            ✓ 詳細な分析結果
+          </div>
+
+          <div>
+            ✓ タイプ別アドバイス
+          </div>
+
+          <div>
+            ✓ 診断履歴の保存
+          </div>
+
+          <div>
+            ✓ 関連ニュースの解説
+          </div>
+
+          <div>
+            ✓ 広告の非表示
+          </div>
+
         </div>
+
 
         <div class="price">
           月額 400円（税込）
@@ -542,74 +880,107 @@
     </div>
 
   </div>
+
 </section>
 
 
-<section>
-  <div class="container">
 
-    <h2 class="section-title">Neo思考診断</h2>
+<section id="download">
 
-    <p class="section-sub">
-      自分を知ることは、自分の考え方を整理する第一歩。
-    </p>
-
-    <div class="release-image">
-      <img
-        src="ChatGPT%20%E7%94%BB%E5%83%8F%202026%E5%B9%B410%E6%9C%883%E6%97%A5%2013_37_22-4.png"
-        alt="Neo思考診断 紹介">
-    </div>
-
-  </div>
-</section>
-
-
-<section>
   <div class="container">
 
     <div class="cta">
 
       <h2>
-        あなたの考え方を、5つの軸から見てみよう。
+        Neo思考診断を
+        App Storeで
       </h2>
 
-      <p class="section-sub" style="margin-bottom:22px;">
-        App Storeでの公開後、このページから
-        アプリへアクセスできるようにします。
+      <p class="section-sub"
+         style="margin-bottom:24px;">
+
+        あなたの考え方を、
+        5つの軸から見てみよう。
+
       </p>
 
-      <a class="btn btn-secondary"
-         href="https://sidebusiness1973-spec.github.io/neo-shiko-shindan-support/">
-        サポート・お問い合わせ
-      </a>
+
+      <div class="buttons"
+           style="margin-top:0;">
+
+        <a class="btn app-store-btn"
+           href="https://apps.apple.com/jp/search?term=Neo%E6%80%9D%E8%80%83%E8%A8%BA%E6%96%AD"
+           target="_blank"
+           rel="noopener">
+
+          <span class="apple"></span>
+
+          <span class="store-text">
+
+            <span class="store-small">
+              App Storeで
+            </span>
+
+            <span class="store-large">
+              Neo思考診断を検索
+            </span>
+
+          </span>
+
+        </a>
+
+
+        <a class="btn btn-secondary"
+           href="https://sidebusiness1973-spec.github.io/neo-shiko-shindan-support/">
+
+          サポート・お問い合わせ
+
+        </a>
+
+      </div>
 
     </div>
 
+
     <div class="notice">
-      Neo思考診断の結果は、自己理解や振り返りのための参考情報です。
+
+      Neo思考診断の結果は、
+      自己理解や振り返りのための参考情報です。
       医学的・心理学的な診断を行うものではありません。
-      また、特定の政治的立場、政党、候補者、投票行動などを推奨・評価するものではありません。
+      また、特定の政治的立場、政党、候補者、
+      投票行動などを推奨・評価するものではありません。
+
     </div>
 
   </div>
+
 </section>
+
 
 </main>
 
 
+
 <footer>
+
   <div class="container">
 
-    <p>© 2026 Neo思考診断</p>
+    <p>
+      © 2026 Neo思考診断
+    </p>
 
     <p>
+
       <a href="https://sidebusiness1973-spec.github.io/neo-shiko-shindan-support/">
         サポート・プライバシーポリシー
       </a>
+
     </p>
 
   </div>
+
 </footer>
+
 
 </body>
 </html>
